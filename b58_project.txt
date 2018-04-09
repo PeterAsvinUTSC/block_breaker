@@ -1,0 +1,105 @@
+CSCB58 Project File: Winter 2018
+
+Team Member A
+-------------
+First Name: Asvin
+Last Name: Sritharan
+Student Number: //omitted for github
+UofT E-mail Address: //omitted for github
+
+
+Team Member B
+-------------
+First Name: Fang
+Last Name: Xiao
+Student Number: //omitted for github
+UofT E-mail Address: //omitted for github
+
+
+Project Details
+---------------
+Project Title: Block Breaker
+
+Project Description: A project created by past B58 members. We are altering the game to have two paddles and multi player functionality.
+The idea of the game is to bounce a ball on a paddle and hit blocks located on the middle of the screen. All the blocks 
+
+Video URL: https://youtu.be/dveO0nkiCaM
+
+Code URL (please upload a copy of this file to your repository at the end of the project as well, it will
+serve as a useful resource for future development): https://github.com/PeterAsvinUTSC/block_breaker
+
+
+Proposal
+--------
+
+What do you plan to have completed by the end of the first lab session?: 
+We want to finalize the specific details about our project's design and come up with a schematic for how our code and modules will be
+structured. We also want to come up with an initial list of additional features that we plan on adding. Then, we would like to get some of 
+the code for the hex and VGA display working. We also plan on completing the code to generate the random objects and game board, along
+with the code for the finite state machine that tracks the objects position. Finally, we want to add the functionality for the user 
+controlling the object's position using the switches.
+
+What do you plan to have completed by the end of the second lab session?: 
+Other team member dropped the course, so we decided to modify a pre-existing game to incorporate multi player functionality. We have accomplished
+getting two paddles on the screen as well as having the ball bounce off the paddle at the top of the screen, as well as a game completed screen.
+
+What do you plan to have completed by the end of the third lab session?: 
+By the end of the third lab session, we plan on having all of the project working, including the major features (like different speed levels, and 
+tracking high scores). We want to use most of the third lab session to thoroughly test the project, fix and bugs, and prepare for the 
+presentation. We also want to fix the ball collision with the 2nd paddle and fix out of bounds for the ball which would cause the game to end.
+
+What is your backup plan if things don't work out as planned? 
+Our backup plan is to try and get a simplified version of the game working, where we don't have different speed levels. If that doesn't work either,
+then depending on the time we have, we may try to work on another simpler game where you control a character trying to dodge certain obstacles.
+
+What hardware will you need beyond the DE2 board (be sure to e-mail Brian if it s anything beyond the basics to make sure there s enough to 
+go around)? The project will only make use of the DE2 board and the VGA display.
+
+Motivations
+-----------
+How does this project relate to the material covered in CSCB58?: Use of DE2 board and VGA to create input and output for the game. Use of
+counters, ALUs and finite state machines seem to play a role in creating the game. Counters could be involved in how the pieces come down to 
+their spots as time goes by, ALUs can be used for different game modes and FSM machines are used for ball positions, keeping track of blocks
+and paddle location. We will also use a FSM to keep track of the position of the object being controlled by the user.
+
+Why is this project interesting/cool (for CSCB58 students, and for non CSCB58 students?):
+This project is interesting for B58 students as it makes use of almost all of the material that we were taught in the first half of our 
+class. Seeing the material we were taught being used in someone practical like a famous game would give a sense of perspective that what we 
+are learning is very useful and applicable. 
+
+It would be interesting for non-CSCB58 students as well because block breaker is a very famous and fun game, and playing it on a VGA display using
+something relatively primitive like a DE2 board to control it can be a fun experience. It can also give them an idea of how such games are 
+developed.
+
+Why did you personally choose this project?:
+This is a backup plan for out previous Tetris game. These additional features seem to be a challenge but still do-able where we should be able
+to have everything working by the end of the third lab session. This specific project was chosen because it seems like it would be more fun if the
+game had two player functionality, and had additional functionality such as speed adjustment and keeping track of scores.
+
+Attributions
+------------
+Provide a complete list of any external resources your project used (attributions should also be included in your
+code).
+Block Breaker - Adrian Ensan, Julia Yan
+----> For Project Week 1, we use code from Jeff No Zhao for the VGA display, and datapath.
+At this point, we haven't used any external resources apart from the code posted on the course website (such as for the hex and VGA display).
+
+Updates
+-------
+
+After the first lab/week: 
+We came up with a basic schematic for the code, highlighting the hierarchy of the modules, including the finite state machine, control, and
+datapath modules. We have finished the code we use for the hex display (for showing the scores) and the VGA display (for showing the game 
+board). We have also set up the controls (using switches for the position and keys for the speed of the objects) that the user needs to 
+control the objects. We also set up the game's clock module, and the finite state machine for keeping track of the objects' positions. We 
+did not manage to display and keep track of the objects (using the FSM for the position) on the VGA, so we plan on fixing that by the next 
+lab. We spent most of the lab time working on this and testing the functionality we completed so far.
+
+After the second lab/week:
+We changed our project to a pre-existing project completed by Adrian Ensan and Julia Yan: Block Breaker. We added two paddles on the screen and have collision working with both paddles, however there is a bug where the ball can only come in contact with the paddle if it hits the paddle from the top. We also added a screen, which is green if all the blocks have been hit.
+
+After the third lab/week:
+We got ball collision working for both paddles, we also fixed the lose zones so now the ball going off the screen at the top or bottom results in a lose game screen. We have implemented a pause function. Flipping SW[1] on causes the game to pause. We have also implemented a speed function for the paddles. This is incorporated only for the paddles because the game originally was very difficulty with the default speed. Playing with the clock for the speed does not do anything for the difficulty because the speed of the paddle wont be fast enough to reach the ball. Flipping SW[3] causes both paddles to move at a faster speed. A trailing feature was also added. This is so it is easier to tell where the ball is going. The trail can be activated by flipping SW[2]. The colour is a light blue as of now but that may be adjusted before presentation on Week 4.
+
+Before fourth lab/:
+We added a winning screen in the case that not all of the blocks are hit. The screen displays the colour of the user who won (colour determined by paddle colour).
